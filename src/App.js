@@ -1,13 +1,12 @@
 import './App.css';
+import Axios from 'axios';
 
 function App() {
-  fetch(
-    ' https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/scores/?daysFrom=1&apiKey=51b97a139b90607c626656313bed0d6b'
-  )
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-    });
+  Axios.get(
+    'https://api.the-odds-api.com/v4/sports/americanfootball_ncaaf/scores/?daysFrom=1&apiKey=51b97a139b90607c626656313bed0d6b'
+  ).then(res => {
+    console.log(res.data);
+  });
 
   return (
     <div className='App'>
